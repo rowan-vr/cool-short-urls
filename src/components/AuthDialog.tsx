@@ -74,7 +74,7 @@ export default function AuthDialog({open, onClose}: AuthDialogProps) {
     function register({username, password}: RegisterForm) {
         axios.post('/api/user/register', {username, password}, {validateStatus: () => true}).then(res => {
             if (res.status === 200) {
-                signIn('credentials', {username, password, callbackUrl: '/'}).then(res => {
+                signIn('credentials', {username, password, redirect:false}).then(res => {
                     if (res!.ok)
                         onClose(true);
                     else {
@@ -139,10 +139,10 @@ export default function AuthDialog({open, onClose}: AuthDialogProps) {
                            placeholder="Username" {...registerForm.register('username')}/>
                     {registerForm.formState.errors.username && <span className={styles.error}>{registerForm.formState.errors.username.message}</span>}
                     <input className={registerForm.formState.errors.password ? styles.error : ''}
-                           placeholder="Password" {...registerForm.register('password')}/>
+                           placeholder="Password" type="password" {...registerForm.register('password')}/>
                     {registerForm.formState.errors.password && <span className={styles.error}>{registerForm.formState.errors.password.message}</span>}
-                    <input className={registerForm.formState.errors.password ? styles.error : ''}
-                           placeholder="Confirm Password" {...registerForm.register('confirmPassword')}/>
+                    <input className={registerForm.formState.errors.confirmPassword ? styles.error : ''}
+                           placeholder="Confirm Password" type="password" {...registerForm.register('confirmPassword')}/>
                     {registerForm.formState.errors.confirmPassword && <span className={styles.error}>{registerForm.formState.errors.confirmPassword.message}</span>}
                     <button onClick={registerForm.handleSubmit(register)}>Register</button>
                 </TabPanel>
