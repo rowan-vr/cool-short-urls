@@ -2,6 +2,7 @@ import {inspect} from "util";
 import styles from '@/styles/Home.module.scss'
 import {DetailedHTMLProps, HTMLAttributes} from "react";
 import {useSession} from "next-auth/react";
+import Link from "next/link";
 
 export type NavBarProps = {
 
@@ -12,19 +13,19 @@ export default function NavBar({...restprops} :NavBarProps & DetailedHTMLProps<H
 
     return (<div className={styles.nav} {...restprops}>
         <div className={styles.item}>
-            <a href="/" >Cool Short Urls</a>
+            <Link href="/" >Cool Short Urls</Link>
         </div>
 
         {session.status === "authenticated" ? <>
             <div className={styles.item} style={{marginLeft: "auto"}}>
-                <a href="/dashboard" >Dashboard</a>
+                <Link href="/dashboard" >Dashboard</Link>
             </div>
         </>: <>
         <div className={styles.item} style={{marginLeft: "auto"}}>
-            <a href="/login" >login</a>
+            <Link href="/login" >login</Link>
         </div>
         <div className={styles.item}>
-            <a href="/register" >register</a>
+            <Link href="/register" >register</Link>
         </div>
         </>}
     </div>)
