@@ -1,0 +1,147 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+.urlbar, .login, .successdialog {
+  display: flex;
+  flex-direction: row;
+
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 900px) {
+    width:80%
+  }
+
+  @media (min-width: 1400px) {
+    width:60%
+  }
+
+
+
+  input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+    background-color: #1e1e1e;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.error {
+      background-color: #9d1f1f;
+    }
+  }
+
+  button {
+    height: 50px;
+    min-width: 250px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease-in-out;
+
+    @media (min-width: 780px) {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: #1e1e1e;
+    }
+  }
+
+  span {
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+
+    &.error {
+      color: #ff0000;
+    }
+  }
+}
+
+.login {
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease-in-out;
+  }
+
+  * {
+    margin-bottom: 10px;
+  }
+
+    button {
+        margin-left: 0;
+    }
+}
+
+.authdialog {
+  width: 100%;
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.nav {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 10px;
+
+  .item {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease-in-out;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+            color: #2172ff;
+            text-decoration: none;
+            }
+    }
+  }
+}
