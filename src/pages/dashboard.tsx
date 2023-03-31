@@ -48,7 +48,7 @@ export default function Dashboard() {
                 <NavBar/>
                 <div style={{width: '810px'}}>
                     <DataGrid style={{border:"none"}} columns={columns} rows={res.data} sx={{minHeight: '600px',
-                    '&& .MuiDataGrid-cell, .MuiDataGrid-columnHeaders, .MuiDataGrid-footerContainer, .MuiToolbar-gutters': {
+                    '&& .MuiDataGrid-cell, .MuiDataGrid-columnHeaders, .MuiDataGrid-footerContainer, .MuiToolbar-gutters, .MuiDataGrid-virtualScrollerContent': {
                         background: '#2c2f3b',
                         color: '#d0d0d0',
                         border: 'none',
